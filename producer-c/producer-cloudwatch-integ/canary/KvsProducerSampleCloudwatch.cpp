@@ -119,10 +119,10 @@ CleanUp:
 STATUS printConfig(PCanaryConfig pCanaryConfig)
 {
     STATUS retStatus = STATUS_SUCCESS;
-    DLOGW("Canary Stream name prefix: %s", pCanaryConfig->streamNamePrefix);
-    DLOGW("Canary type: %s", pCanaryConfig->canaryTypeStr);
-    DLOGW("Fragment size in bytes: %llu bytes", pCanaryConfig->fragmentSizeInBytes);
-    DLOGW("Canry run time: %llu seconds", pCanaryConfig->canaryDuration);
+    DLOGI("Canary Stream name prefix: %s", pCanaryConfig->streamNamePrefix);
+    DLOGI("Canary type: %s", pCanaryConfig->canaryTypeStr);
+    DLOGI("Fragment size in bytes: %llu bytes", pCanaryConfig->fragmentSizeInBytes);
+    DLOGI("Canary run time: %llu seconds", pCanaryConfig->canaryDuration);
 CleanUp:
     return retStatus;
 }

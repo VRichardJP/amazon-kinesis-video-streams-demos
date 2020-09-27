@@ -25,7 +25,6 @@ import java.util.TimerTask;
 
 @Slf4j
 public class ProducerSdkCanaryConsumer {
-    static ContinuousGetMediaWorker getMediaWorker;
     public static void main(final String[] args) throws Exception {
         String streamNamePrefix = System.getenv("CANARY_STREAM_NAME");
         String canaryType = System.getenv("CANARY_TYPE");
@@ -60,7 +59,7 @@ public class ProducerSdkCanaryConsumer {
                 };
             }
         };
-        getMediaWorker = ContinuousGetMediaWorker.create(Regions.fromName(region),
+        ContinuousGetMediaWorker getMediaWorker = ContinuousGetMediaWorker.create(Regions.fromName(region),
                 credentialsProvider, streamName, new StartSelector().withStartSelectorType(StartSelectorType.NOW),
                 amazonKinesisVideo,
                 consumerFactory);
